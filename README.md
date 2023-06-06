@@ -24,9 +24,10 @@ Or if you only need particular hooks, you can import and register them separatel
 
 ```js
 import Alpine from 'alpinejs';
-import { useHover } from '@ryangjchandler/alpine-hooks';
+import { useHover, useWindowSize } from '@ryangjchandler/alpine-hooks';
 
 Alpine.plugin(useHover);
+Alpine.plugin(useWindowSize);
 Alpine.start();
 ```
 
@@ -38,4 +39,5 @@ The table below lists all of the available hooks.
 | --- | --- | --- |
 | `$useHover` | Reacts to a mouse hovering over a specific element. | [View](/examples/useHover.html) |
 | `$useFocus` | Reacts to a specific element being focused and blurred. | [View](/examples/useFocus.html) |
-| `$useHash` | Update and react to changes to `window.location.hash` | [View](/examples/useHash.html) |
+| `$useHash` | Update and react to changes to `window.location.hash`. | [View](/examples/useHash.html) |
+| `$useWindowSize` | Read and react to changes in the window / viewport size. | [View](/examples/useWindowSize.html) |

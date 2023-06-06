@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module">
+        import { useWindowSize } from '/dist/alpine-hooks.js'
+
+        document.addEventListener('alpine:init', () => {
+            Alpine.plugin(useWindowSize)
+        })
+    </script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <title>$useWindowSize</title>
+</head>
+<body class="antialiased w-screen h-screen bg-neutral-800 py-24">
+    <h1 class="text-2xl font-bold text-white text-center">
+        $useWindowSize()
+    </h1>
+
+    <main x-data="{ size: $useWindowSize() }" class="max-w-7xl mx-auto border border-neutral-700/50 bg-neutral-700/75 mt-24 rounded-lg p-4">
+        <p class="text-neutral-100 text-center">
+            Resize the window and watch the dimensions change below.
+        </p>
+
+        <p class="text-xl mx-auto font-medium text-center text-neutral-300 mt-4">
+            <span x-text="size.width"></span>px by <span x-text="size.height"></span>px
+        </p>
+    </main>
+</body>
+</html>
