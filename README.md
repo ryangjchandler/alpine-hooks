@@ -36,4 +36,5 @@ The table below lists all of the available hooks.
 
 | Hook | Description | Example |
 | --- | --- | --- |
-| `@useHover` | Reacts to a mouse hovering over a specific element. | [View](/examples/useHover.html) |
+| `$useHover` | Reacts to a mouse hovering over a specific element. | [View](/examples/useHover.html) |
+| `$useFocus` | Reacts to a specific element being focused and blurred. | [View](/examples/useFocus.html) |

@@ -1,2 +1,2 @@
-function t(e){e.magic("useHover",(s,{interceptor:u})=>u((n,a,o,f,i)=>{let r=n;return o(!1),r.addEventListener("mouseover",()=>{o(!0)}),r.addEventListener("mouseout",()=>{o(!1)}),a()}))}function m(e){e.plugin(t)}export{m as default,t as useHover};
+function s(u){u.magic("useHover",(f,{interceptor:o})=>o((n,r,e,l,i)=>{let t=n;return e(!1),t.addEventListener("mouseover",()=>{e(!0)}),t.addEventListener("mouseout",()=>{e(!1)}),r()}))}function a(u){u.magic("useFocus",(f,{interceptor:o})=>o((n,r,e,l,i)=>{let t=n;return e(!1),t.addEventListener("focus",()=>{e(!0)}),t.addEventListener("blur",()=>{e(!1)}),r()}))}function v(u){u.plugin(s),u.plugin(a)}export{v as default,a as useFocus,s as useHover};
 //# sourceMappingURL=alpine-hooks.js.map

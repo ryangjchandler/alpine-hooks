@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <script type="module">
+        import { useFocus } from '/dist/alpine-hooks.js'
+
+        document.addEventListener('alpine:init', () => {
+            Alpine.plugin(useFocus)  
+        })
+    </script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <title>$useFocus</title>
+</head>
+<body class="antialiased w-screen h-screen bg-neutral-800 py-24">
+    <h1 class="text-2xl font-bold text-white text-center">
+        $useFocus()
+    </h1>
+
+    <main class="max-w-7xl mx-auto border border-neutral-700/50 bg-neutral-700/75 mt-24 rounded-lg p-4">
+        <div x-data="{ focusing: $useFocus($refs.target) }" class="py-8 flex flex-col items-center justify-center">
+            <input type="text" class="w-3/4" placeholder="Focus on this input and observe some magic." x-ref="target">
+
+            <p class="text-white text-xl font-medium mt-8" x-show="focusing">
+                You're focusing on the input!
+            </p>
+        </div>
+    </main>
+</body>
+</html>
