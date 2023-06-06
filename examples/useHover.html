@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module">
+        import { useHover } from '/dist/alpine-hooks.js'
+
+        document.addEventListener('alpine:init', () => {
+            Alpine.plugin(useHover)  
+        })
+    </script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <title>$useHover</title>
+</head>
+<body class="antialiased w-screen h-screen bg-neutral-800 py-24">
+    <h1 class="text-2xl font-bold text-white text-center">
+        $useHover()
+    </h1>
+
+    <main class="max-w-7xl mx-auto border border-neutral-700/50 bg-neutral-700/75 mt-24 rounded-lg p-4">
+        <div x-data="{ hovering: $useHover($refs.target) }" class="py-8">
+            <div
+                class="w-52 h-64 rounded bg-red-500 transition-colors ease-in-out duration-300 mx-auto flex items-center justify-center"
+                x-bind:class="{
+                    'bg-red-500': !hovering,
+                    'bg-blue-500': hovering
+                }"
+                x-ref="target"
+            >
+                <p class="font-medium" x-text="hovering ? 'Hovering...' : 'Not hovering...'"></p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

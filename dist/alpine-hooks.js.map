@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/hooks/useHover.js", "../src/index.js"],
+  "sourcesContent": ["export default function useHover(Alpine) {\n    Alpine.magic('useHover', (el, { interceptor }) => {\n        return interceptor((initialValue, getter, setter, path, key) => {\n            const element = initialValue;\n            \n            setter(false);\n\n            element.addEventListener('mouseover', () => {\n                setter(true);\n            })\n    \n            element.addEventListener('mouseout', () => {\n                setter(false);\n            })\n\n            return getter();\n        })\n    })\n};", "import useHover from './hooks/useHover'\n\nexport default function (Alpine) {\n    Alpine.plugin(useHover);\n};\n\nexport { useHover };"],
+  "mappings": "AAAe,SAARA,EAA0BC,EAAQ,CACrCA,EAAO,MAAM,WAAY,CAACC,EAAI,CAAE,YAAAC,CAAY,IACjCA,EAAY,CAACC,EAAcC,EAAQC,EAAQC,EAAMC,IAAQ,CAC5D,IAAMC,EAAUL,EAEhB,OAAAE,EAAO,EAAK,EAEZG,EAAQ,iBAAiB,YAAa,IAAM,CACxCH,EAAO,EAAI,CACf,CAAC,EAEDG,EAAQ,iBAAiB,WAAY,IAAM,CACvCH,EAAO,EAAK,CAChB,CAAC,EAEMD,EAAO,CAClB,CAAC,CACJ,CACL,CChBe,SAARK,EAAkBC,EAAQ,CAC7BA,EAAO,OAAOC,CAAQ,CAC1B",
+  "names": ["useHover", "Alpine", "el", "interceptor", "initialValue", "getter", "setter", "path", "key", "element", "src_default", "Alpine", "useHover"]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "@ryangjchandler/alpine-hooks",
+  "version": "1.0.0",
+  "description": "A collection of hooks for Alpine.js.",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryangjchandler/alpine-hooks.git"
+  },
+  "keywords": [
+    "alpinejs"
+  ],
+  "author": "Ryan Chandler <support@ryangjchandler.co.uk>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryangjchandler/alpine-hooks/issues"
+  },
+  "homepage": "https://github.com/ryangjchandler/alpine-hooks#readme",
+  "scripts": {
+    "build": "esbuild src/index.js --format=esm --bundle --minify --sourcemap --outfile=dist/alpine-hooks.js"
+  },
+  "peerDependencies": {
+    "alpinejs": "^3.12"
+  },
+  "devDependencies": {
+    "esbuild": "^0.17.19"
+  }
+}
