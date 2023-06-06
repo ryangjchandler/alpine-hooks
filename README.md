@@ -38,3 +38,4 @@ The table below lists all of the available hooks.
 | --- | --- | --- |
 | `$useHover` | Reacts to a mouse hovering over a specific element. | [View](/examples/useHover.html) |
 | `$useFocus` | Reacts to a specific element being focused and blurred. | [View](/examples/useFocus.html) |
+| `$useHash` | Update and react to changes to `window.location.hash` | [View](/examples/useHash.html) |
